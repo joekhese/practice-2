@@ -1,0 +1,20 @@
+---
+host: localhost
+become: yes
+become_user: root
+tasks:
+   - name: install httpd
+     yum:
+       name: httpd
+   - name: install php and maria db
+    yum: name={{item}} state=installed
+    with_items:
+    - php
+    - php-mysql
+    - php-pdo
+    - php-gd
+    - php-mbstring
+    - mariadb-server
+    - mariadb
+    - name: copy data
+    shell: echo "<?php phpinfo (); ?>" > /var/www/html/info.php
