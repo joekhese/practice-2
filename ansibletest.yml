@@ -1,0 +1,37 @@
+---
+#- name: install nginx, and apache
+- hosts: localhost
+  remote_user: joekhese
+  become: yes 
+
+  tasks:
+    - name: install epel repo
+      yum: name=epel-release state=present
+
+    - name: install nginx
+      yum:
+        name: nginx
+        state: latest
+
+    - name: install python bindings for SELinux
+      yum: name={{item}} state=present
+      with_items:
+        - libselinux-python
+        - libsemanage-python
+
+    - name: test to see if SELinux is running
+      command: getenforce
+      register: sestatus
+      changed_when: false
+
+    - name: install apache
+      yum: name=httpd state=present
+
+    #- name: start apache
+     # yum: name=httpd state=started enabled=yes
+
+  handlers:
+    - name: restart nginx
+      service:
+        name: nginx
+        state: restarted

@@ -1,0 +1,89 @@
+git config --global user.name "name"
+git config --global user.email "email"
+git config --list
+
+git help <verb>
+git <verb> --help
+
+tracking a local project
+
+git init
+
+ To ignore files
+touch .gitignore (create a gitignore file)
+add the names of the files to be ignored to the git ignore
+
+Git process 
+
+git add <filename> (add a particular file to staging area)
+git add -A (add all files to staging area)
+or
+git add . (add all files to staging area)
+
+git reset <filename> (removes file from staging area)
+or 
+git reset (removes all files from staging area)
+
+git commit -m "commit message" (commits a file)
+
+git log (shows interactions logs)
+
+
+Track an existing remote project with Git
+
+fork the repository 
+git clone <url>
+
+git remote -v (views repository info)
+git branch -a (lists all branches)
+git diff (shows changes made to the code)
+git branch <branch_name> (creates a branch)
+git checkout <branch_name> (switch to branch>
+
+git add -A (add all files to staging area)
+or
+git add . (add all files to staging area)
+
+git reset <filename> (removes file from staging area)
+or 
+git reset (removes all files from staging area)
+
+git commit -m "commit message" (commits a file)
+
+To push to the remote repository
+
+git push -u origin <branch_name> (pushes branch which isnt master)
+git pull origin master (gets latest updates from remote repository)
+git push origin master (updates remote repository)
+
+Merge with Master
+
+git checkout master (switch to master branch)
+git pull origin master
+git branch --merged (shows branches merged so far)
+git merge <branch_name>
+git push origin master
+
+Delete a branch
+git branch -d <branch_name> (delete a branch locally)
+git push origin --delete <branch_name> (delete from remote repository)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

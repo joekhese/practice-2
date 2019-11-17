@@ -1,0 +1,36 @@
+      // "sudo yum -y install yum-utils",
+      // "sudo yum -y groupinstall development",
+      // "sudo yum install ansible terraform -y"
+
+
+export aws_access_key_id= Key name
+export aws_secret_id=Key name
+aws
+aws ec2 describe-instances
+
+history | grep export
+history
+env | grep aws -i
+
+"ssh_keypair_name": "{{user `ssh_keypair_name`}}",
+
+Linux
+sudo netstat -tulpen
+sudo netstat -pna | grep 8080
+kill $(lsof -t -i:8080)
+sudo kill -TERM [process number]
+
+
+sudo docker run --name MyJenkinsIm -p 8080:8080 -p 50000:50000 -v /home/joekhese/Downloads/Jenkins_Home:/var/jenkins_home jenkins
+
+to stop:
+jenkins.exe stop
+
+to start:
+jenkins.exe start
+
+to restart:
+jenkins.exe restart
+
+run ansible playbook
+ansible-playbook --ask-become-pass -i inventory new_ans_install.yml
