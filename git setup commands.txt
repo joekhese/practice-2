@@ -68,6 +68,9 @@ Delete a branch
 git branch -d <branch_name> (delete a branch locally)
 git push origin --delete <branch_name> (delete from remote repository)
 
+Git Hard Reset
+
+git reset --hard origin/master (to reset master branch)
 
 
 
